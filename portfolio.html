@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .portfolio-section {
+      transition: background-color 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+
+    body.dark-mode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+
+    .dark-mode .navbar,
+    .dark-mode .modal-content,
+    .dark-mode .card {
+      background-color: #1e1e1e !important;
+      color: #ffffff;
+    }
+
+    .dark-mode .form-control,
+    .dark-mode textarea,
+    .dark-mode input {
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #555;
+    }
+
+    .dark-mode .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    .dark-mode .form-check-label {
+      color: #ffffff;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Student Portfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <div class="form-check form-switch text-light">
+          <input class="form-check-input" type="checkbox" id="modeToggle">
+          <label class="form-check-label" for="modeToggle">Dark Mode</label>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5 portfolio-section">
+    <div class="row mb-5 align-items-center">
+      <div class="col-md-4 text-center">
+        <img src="/images/Me.png" class="img-fluid rounded-circle border border-dark" alt="Alex Rivera" width="200">
+      </div>
+      <div class="col-md-8">
+        <h2>Myre Lector Andre M. Morada</h2>
+        <p><strong>Age:</strong> 24</p>
+        <p><strong>Skills:</strong> HTML, CSS, JavaScript, Bootstrap, C++</p>
+        <p><strong>Hobbies:</strong> Reading, Gaming, Gym</p>
+      </div>
+    </div>
+
+    <h2 class="text-center mb-4">My Projects</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card project-card mb-4">
+          <img src="/images/dollar.png" class="card-img-top" alt="Expense Tracker">
+          <div class="card-body">
+            <h5 class="card-title project-title">Expense Tracker</h5>
+            <p class="card-text">An app to manage daily expenses, track budgets, and visualize spending habits.</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#project1Modal">More Details</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card project-card mb-4">
+          <img src="/images/bank.png" class="card-img-top" alt="Bank System">
+          <div class="card-body">
+            <h5 class="card-title project-title">Bank System</h5>
+            <p class="card-text">A banking system with features like account creation, deposit, withdrawal, and transaction history.</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#project2Modal">More Details</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card project-card mb-4">
+          <img src="/images/container.png" class="card-img-top" alt="Inventory System">
+          <div class="card-body">
+            <h5 class="card-title project-title">Inventory System</h5>
+            <p class="card-text">System for managing stock levels, item tracking, and delivery logistics for warehouses.</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#project3Modal">More Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="text-center mt-5 mb-4">Contact Me</h2>
+    <form id="contactForm">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send</button>
+    </form>
+  </div>
+
+  <!-- Modals -->
+  <div class="modal fade" id="project1Modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Expense Tracker</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>This project helps users track their income and expenses with a user-friendly interface, charts, and summaries.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="project2Modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Bank System</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>A robust banking system simulation built for learning core programming principles and financial operations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="project3Modal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Inventory System</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p>Designed to streamline inventory tracking, supplier management, and optimize supply chain workflows.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Contact form submission alert
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Thank you for contacting me! I'll get back to you soon.");
+      this.reset();
+    });
+
+    // Project title click changes portfolio background
+    const titles = document.querySelectorAll('.project-title');
+    const portfolio = document.querySelector('.portfolio-section');
+    titles.forEach(title => {
+      title.addEventListener('click', () => {
+        portfolio.style.backgroundColor = `hsl(${Math.floor(Math.random() * 360)}, 30%, 85%)`;
+      });
+    });
+
+    // Dark mode toggle
+    const toggle = document.getElementById('modeToggle');
+    toggle.addEventListener('change', function () {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+
+</html>

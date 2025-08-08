@@ -1,0 +1,13 @@
+.card:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
+}
+
+.project-title {
+  cursor: pointer;
+  color: #0d6efd;
+}
+
+.project-title:hover {
+  text-decoration: underline;
+}
